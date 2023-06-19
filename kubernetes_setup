@@ -59,6 +59,9 @@ sudo kubeadm join 172.31.4.161:6443 --token 0y52t6.ffsj8jkjfcl1sq8h \
 
 kubectl get nodes
 
+=================To see token and SSH256 key details, run below commanad===================================
+kubeadm token create --print-join-command
+
 
 
 
