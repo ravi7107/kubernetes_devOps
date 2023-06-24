@@ -25,4 +25,10 @@ kubectl create -f dashboard_user.yml
 
 kubectl -n kubernetes-dashboard create token admin-user
 
+#Another way to create admin user for kubeadm
+kubectl create clusterrolebinding dashboard-admin --clusterrole=cluster-admin --serviceaccount=kubernetes-dashboard:dashboard-admin
+#For vrify admin access to above user
+kubectl auth can-i list serviceaccounts --as=system:serviceaccount:kubernetes-dashboard:dashboard-admin
+
+
 Open your favorite browser and navigate to https://kuberntes-node:NodePort/#/login to access the Kubernetes dashboard. Example - https://3.86.185.35:31315/#/login
